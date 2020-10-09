@@ -38,11 +38,9 @@ namespace HotelReservations
                     {
                         checkAvailability = true;
                         var pom = FindLatestBookedDateInRoom(i, startDay);
-                        if (pom > indexOfLatestBookedDateInRoom)
-                        {
-                            indexOfLatestBookedDateInRoom = pom;
-                            indexOfFreeRoom = i;
-                        }
+                        if (pom <= indexOfLatestBookedDateInRoom) continue;
+                        indexOfLatestBookedDateInRoom = pom;
+                        indexOfFreeRoom = i;
 
                     }
                 }
